@@ -13,8 +13,73 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="256dp"
         android:contentDescription="@string/badguy"
         android:src="@drawable/mybadguy"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/name"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView android:text="@string/suspect_name"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/gender"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView android:text="@string/suspect_gender"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/age"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView android:text="@string/suspect_age"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/bounty"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView android:text="@string/suspect_bounty"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/details"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/suspect_details"/>
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_report"/>
 
 </LinearLayout>
