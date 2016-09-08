@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">SMTE4</string>
-    <string name="welcome">Welcome!</string>
-    <string name="name">Name</string>
+    <string name="app_name">CSI</string>
+    <string name="badguy">Bad guy</string>
 </resources>
