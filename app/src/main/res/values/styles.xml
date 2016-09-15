@@ -6,6 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:buttonStyle">@style/Button</item>
+        <item name="android:listViewStyle">@style/ListView</item>
+    </style>
+
+    <style name="TextAppearance.Emphasis" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TextAppearance.Emphasis.Big">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/buttonshape</item>
+    </style>
+
+    <style name="ListView" parent="Widget.AppCompat.ListView">
+        <item name="android:divider">@drawable/lineshape</item>
     </style>
 
 </resources>

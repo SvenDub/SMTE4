@@ -17,6 +17,11 @@
         android:contentDescription="@string/badguy"
         android:src="@drawable/mybadguy"/>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lineshape"/>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,17 +30,19 @@
         <TableRow>
 
             <TextView
-                android:text="@string/name"
-                android:textColor="@color/colorAccent"/>
+                style="@style/TextAppearance.Emphasis"
+                android:text="@string/name"/>
 
-            <TextView android:text="@string/suspect_name"/>
+            <TextView
+                android:id="@+id/txt_name"
+                android:text="@string/suspect_name"/>
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="@string/gender"
-                android:textColor="@color/colorAccent"/>
+                style="@style/TextAppearance.Emphasis"
+                android:text="@string/gender"/>
 
             <TextView android:text="@string/suspect_gender"/>
         </TableRow>
@@ -43,8 +50,8 @@
         <TableRow>
 
             <TextView
-                android:text="@string/age"
-                android:textColor="@color/colorAccent"/>
+                style="@style/TextAppearance.Emphasis"
+                android:text="@string/age"/>
 
             <TextView android:text="@string/suspect_age"/>
         </TableRow>
@@ -52,15 +59,15 @@
         <TableRow>
 
             <TextView
-                android:text="@string/bounty"
-                android:textColor="@color/colorAccent"/>
+                style="@style/TextAppearance.Emphasis"
+                android:text="@string/bounty"/>
 
             <TextView android:text="@string/suspect_bounty"/>
         </TableRow>
     </TableLayout>
 
     <TextView
-        style="@style/TextAppearance.AppCompat.Medium"
+        style="@style/TextAppearance.Emphasis.Big"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/details"/>
@@ -69,6 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,10 +84,10 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btn_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/report"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/btn_report"/>
+        android:text="@string/report"/>
 
 </LinearLayout>
