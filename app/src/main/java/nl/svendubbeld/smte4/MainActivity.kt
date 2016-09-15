@@ -11,6 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (intent.hasExtra("name")) {
+            txt_name.text = intent.getStringExtra("name")
+        }
+
         btn_report.setOnClickListener {
             startActivity(Intent(applicationContext, ReportActivity::class.java))
         }

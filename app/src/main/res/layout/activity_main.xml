@@ -33,7 +33,9 @@
                 style="@style/TextAppearance.Emphasis"
                 android:text="@string/name"/>
 
-            <TextView android:text="@string/suspect_name"/>
+            <TextView
+                android:id="@+id/txt_name"
+                android:text="@string/suspect_name"/>
         </TableRow>
 
         <TableRow>
