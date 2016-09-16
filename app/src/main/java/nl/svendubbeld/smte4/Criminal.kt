@@ -2,6 +2,7 @@ package nl.svendubbeld.smte4
 
 import android.graphics.drawable.Drawable
 import android.location.Location
+import java.text.NumberFormat
 
 class Criminal {
 
@@ -16,4 +17,5 @@ class Criminal {
     var lastKnownLocation: Location? = null
 
     val bountyInDollars: Int get() = crimes?.sumBy { it.bountyInDollars } ?: 0
+    val bountyDisplay: String get() = NumberFormat.getCurrencyInstance().format(bountyInDollars)
 }

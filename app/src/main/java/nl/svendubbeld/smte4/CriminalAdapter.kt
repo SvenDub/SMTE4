@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.criminal_list_item.view.*
-import java.text.NumberFormat
 
-class CriminalAdapter(val criminalsList: List<Criminal>, val itemClick: (Criminal) -> Unit) : RecyclerView.Adapter<CriminalAdapter.ViewHolder>() {
+class CriminalAdapter(val criminalsList: List<Criminal>, val itemClick: (Criminal, Int) -> Unit) : RecyclerView.Adapter<CriminalAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindCriminal(criminalsList[position])
+        holder.bindCriminal(criminalsList[position], position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,13 +20,13 @@ class CriminalAdapter(val criminalsList: List<Criminal>, val itemClick: (Crimina
     override fun getItemCount() = criminalsList.size
 
 
-    class ViewHolder(view: View, val itemClick: (Criminal) -> Unit) : RecyclerView.ViewHolder(view) {
-        fun bindCriminal(criminal: Criminal) {
+    class ViewHolder(view: View, val itemClick: (Criminal, Int) -> Unit) : RecyclerView.ViewHolder(view) {
+        fun bindCriminal(criminal: Criminal, position: Int) {
             with(criminal) {
                 itemView.img_mugshot.setImageDrawable(mugshot)
                 itemView.txt_name.text = name
-                itemView.txt_bounty.text = NumberFormat.getCurrencyInstance().format(bountyInDollars)
-                itemView.setOnClickListener { itemClick(this) }
+                itemView.txt_bounty.text = bountyDisplay
+                itemView.setOnClickListener { itemClick(this, position) }
             }
         }
     }

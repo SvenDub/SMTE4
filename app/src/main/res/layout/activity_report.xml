@@ -45,7 +45,16 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/TextAppearance.Emphasis.Big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/badguy"/>
+
         <ImageView
+            android:id="@+id/img_mugshot"
             android:layout_width="wrap_content"
             android:layout_height="256dp"
             android:contentDescription="@string/badguy"

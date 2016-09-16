@@ -12,8 +12,10 @@
     tools:context="nl.svendubbeld.smte4.MainActivity">
 
     <ImageView
+        android:id="@+id/img_mugshot"
         android:layout_width="wrap_content"
         android:layout_height="256dp"
+        android:layout_gravity="center"
         android:contentDescription="@string/badguy"
         android:src="@drawable/mybadguy"/>
 
@@ -44,7 +46,9 @@
                 style="@style/TextAppearance.Emphasis"
                 android:text="@string/gender"/>
 
-            <TextView android:text="@string/suspect_gender"/>
+            <TextView
+                android:id="@+id/txt_gender"
+                android:text="@string/suspect_gender"/>
         </TableRow>
 
         <TableRow>
@@ -53,7 +57,9 @@
                 style="@style/TextAppearance.Emphasis"
                 android:text="@string/age"/>
 
-            <TextView android:text="@string/suspect_age"/>
+            <TextView
+                android:id="@+id/txt_age"
+                android:text="@string/suspect_age"/>
         </TableRow>
 
         <TableRow>
@@ -62,7 +68,9 @@
                 style="@style/TextAppearance.Emphasis"
                 android:text="@string/bounty"/>
 
-            <TextView android:text="@string/suspect_bounty"/>
+            <TextView
+                android:id="@+id/txt_bounty"
+                android:text="@string/suspect_bounty"/>
         </TableRow>
     </TableLayout>
 
@@ -78,6 +86,7 @@
         android:layout_weight="1">
 
         <TextView
+            android:id="@+id/txt_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/suspect_details"/>

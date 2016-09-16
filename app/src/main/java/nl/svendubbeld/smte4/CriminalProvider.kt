@@ -30,9 +30,12 @@ class CriminalProvider
      * @return the criminal
      */
     fun getCriminal(index: Int): Criminal? {
-        if (index >= criminalList.size) return null
-
-        return criminalList[index]
+        try {
+            return criminalList[index]
+        } catch (e: ArrayIndexOutOfBoundsException) {
+            e.printStackTrace()
+            return null
+        }
     }
 
     /**

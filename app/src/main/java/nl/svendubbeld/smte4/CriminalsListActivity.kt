@@ -1,9 +1,9 @@
 package nl.svendubbeld.smte4
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_criminals_list.*
 
 class CriminalsListActivity : AppCompatActivity() {
@@ -14,8 +14,10 @@ class CriminalsListActivity : AppCompatActivity() {
 
         lst_criminals.layoutManager = LinearLayoutManager(this)
 
-        val adapter = CriminalAdapter(CriminalProvider(applicationContext).getCriminals()) {
-            Toast.makeText(applicationContext, it.name, Toast.LENGTH_SHORT).show()
+        val adapter = CriminalAdapter(CriminalProvider(applicationContext).getCriminals()) { criminal: Criminal, position: Int ->
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("position", position)
+            startActivity(intent)
         }
         lst_criminals.adapter = adapter
     }
