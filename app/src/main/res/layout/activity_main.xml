@@ -25,6 +25,15 @@
             android:contentDescription="@string/badguy"
             android:src="@drawable/mybadguy"/>
 
+        <fragment android:id="@+id/map"
+                  android:name="com.google.android.gms.maps.SupportMapFragment"
+                  xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  tools:context=".MainActivity"/>
+
         <Button
             android:id="@+id/btn_report"
             android:layout_width="wrap_content"

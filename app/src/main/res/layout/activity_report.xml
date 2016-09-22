@@ -11,6 +11,7 @@
     tools:context="nl.svendubbeld.smte4.ReportActivity">
 
     <Button
+        android:id="@+id/btn_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -18,6 +19,7 @@
         android:text="@string/action_picture"/>
 
     <Button
+        android:id="@+id/btn_gps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -33,6 +35,7 @@
         android:text="@string/action_back"/>
 
     <Button
+        android:id="@+id/btn_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -65,6 +68,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/action_call"/>
+
+        <TextView
+            style="@style/TextAppearance.Emphasis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/sca"/>
+
+        <ToggleButton
+            android:id="@+id/btn_sca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 
