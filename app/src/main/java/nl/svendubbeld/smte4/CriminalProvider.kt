@@ -65,8 +65,8 @@ class CriminalProvider
             someCriminal.age = 10 + r.nextInt(100)
 
             someCriminal.lastKnownLocation = Location("")
-            someCriminal.lastKnownLocation!!.latitude = -180.0 + r.nextDouble() * 180.0
-            someCriminal.lastKnownLocation!!.longitude = -180.0 + r.nextDouble() * 180.0
+            someCriminal.lastKnownLocation!!.latitude = -90.0 + r.nextDouble() * 180.0
+            someCriminal.lastKnownLocation!!.longitude = -180.0 + r.nextDouble() * 360.0
 
             someCriminal.crimes = ArrayList<Crime>()
             val maxNumberOfCrimes = context.resources.getStringArray(R.array.crimeNames).size
