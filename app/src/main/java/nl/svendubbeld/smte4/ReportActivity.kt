@@ -44,6 +44,14 @@ class ReportActivity : AppCompatActivity(), LocationListener {
                     val geoIntent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:$coords?q=$coords"))
                     startActivity(geoIntent)
                 }
+
+                btn_share.setOnClickListener {
+                    val coords = "" + lastKnownLocation!!.latitude + "," + lastKnownLocation!!.longitude
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Help me find $name! " + (if (gender.equals("Male")) "H" else "Sh") + "e is $age years old.\n\nDetails:\n$description\n\nLast know location:\n$coords")
+                    shareIntent.type = "text/plain"
+                    startActivity(Intent.createChooser(shareIntent, "Share"))
+                }
             }
         } else {
             txt_name.text = resources.getString(R.string.criminal_not_found)
