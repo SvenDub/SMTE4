@@ -2,10 +2,12 @@ package nl.svendubbeld.smte4
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.Vibrator
 import android.support.annotation.NonNull
@@ -37,6 +39,11 @@ class ReportActivity : AppCompatActivity(), LocationListener {
             with(criminal) {
                 txt_name.text = name
                 img_mugshot.setImageDrawable(mugshot)
+                btn_gps.setOnClickListener {
+                    val coords = "" + lastKnownLocation!!.latitude + "," + lastKnownLocation!!.longitude
+                    val geoIntent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:$coords?q=$coords"))
+                    startActivity(geoIntent)
+                }
             }
         } else {
             txt_name.text = resources.getString(R.string.criminal_not_found)
@@ -46,10 +53,6 @@ class ReportActivity : AppCompatActivity(), LocationListener {
 
         btn_back.setOnClickListener {
             finish()
-        }
-
-        btn_gps.setOnClickListener {
-            Toast.makeText(this, "Target: " + criminal!!.lastKnownLocation!!.toString(), Toast.LENGTH_LONG).show()
         }
     }
 
