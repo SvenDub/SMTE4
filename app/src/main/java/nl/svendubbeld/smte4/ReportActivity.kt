@@ -4,12 +4,14 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Vibrator
+import android.provider.MediaStore
 import android.support.annotation.NonNull
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_report.*
 class ReportActivity : AppCompatActivity(), LocationListener {
 
     val REQUEST_CODE_PERMISSION_LOCATION = 1
+    val REQUEST_IMAGE_CAPTURE = 2
 
     var position: Int = -1
 
@@ -62,6 +65,10 @@ class ReportActivity : AppCompatActivity(), LocationListener {
         btn_back.setOnClickListener {
             finish()
         }
+
+        btn_picture.setOnClickListener {
+            startActivityForResult(Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE)
+        }
     }
 
     override fun onResume() {
@@ -97,6 +104,14 @@ class ReportActivity : AppCompatActivity(), LocationListener {
             } else {
                 startLocationUpdates()
             }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            val extras = data.extras
+            val imageBitmap = extras.get("data") as Bitmap
+            img_mugshot.setImageBitmap(imageBitmap)
         }
     }
 
